@@ -6,7 +6,7 @@ st.write("Bienvenido a la página principal de Gestrest2.0")
 
 name = st.text_input("Introduce tu nombre")
 
-password = st.password_input("Introduce tu contraseña")
+password = st.password_input("Introduce tu contraseña", type="password")
 
 st.write(f"Nombre ingresado: {name}")
 st.write(f"Contraseña ingresada: {password}")
