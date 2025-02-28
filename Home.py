@@ -1,7 +1,7 @@
 import streamlit as st
 
-ADMIN_USER = "ADMIN_USER"
-ADMIN_PASSWORD = "123456"
+ADMIN_USER = "Gloria"
+ADMIN_PASSWORD = "654321"
 
 EMPLOYEES = {
     "Carlos": "2421",
@@ -36,7 +36,8 @@ if st.session_state["authenticated"]:
         st.write("¡Bienvenido, empleado!")
         horas_extras = st.number_input("Numero", value=0, step=1)
         
-        st.write(f"Horas extras: {horas_extras}")
+        st.write(f"Minutos extras: {horas_extras}")
+
         # Aquí irían las funciones exclusivas de empleado
 else:
     check_authentication()
