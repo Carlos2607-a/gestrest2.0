@@ -1,17 +1,24 @@
 import streamlit as st
-import pandas as pd
+import os
 
-st.title("Gestión Luna Beach")
-st.write("Bienvenido a la página principal de Gestrest2.0")
+ADMIN_USER = "ADMIN_USER"
+ADMIN_PASSWORD = "123456"
 
-name = st.text_input("Introduce tu nombre")
+def check_authentication():
+    user = st.text_input("Usuario")
+    password = st.text_input("Contraseña", type="password")
 
-#password = st.password_input("Introduce tu contraseña", type="password")
+    if st.button("Iniciar sesión"):
+        if user == ADMIN_USER and password == ADMIN_PASSWORD:
+            st.session_state["authenticated"] = True
+        else:
+            st.error("Credenciales incorrectas")
 
-st.write(f"Nombre ingresado: {name}")
+if "authenticated" not in st.session_state:
+    st.session_state["authenticated"] = False
 
-if name == "admin":
-    st.write("Acceso concedido")
+if st.session_state["authenticated"]:
+    st.write("¡Bienvenido, administrador!")
+    # Aquí irían las funciones exclusivas de administrador
 else:
-    st.write("Acceso denegado")
-#st.write(f"Contraseña ingresada: {password}")
+    check_authentication()
