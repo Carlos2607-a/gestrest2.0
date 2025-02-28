@@ -9,4 +9,9 @@ name = st.text_input("Introduce tu nombre")
 #password = st.password_input("Introduce tu contraseña", type="password")
 
 st.write(f"Nombre ingresado: {name}")
+
+if name == "admin":
+    st.write("Acceso concedido")
+else:
+    st.write("Acceso denegado")
 #st.write(f"Contraseña ingresada: {password}")
